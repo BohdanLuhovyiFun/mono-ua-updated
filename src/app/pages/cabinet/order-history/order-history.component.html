@@ -1,0 +1,33 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Замовлення</th>
+            <th>Дата та час</th>
+            <th class="hide">Адреса</th>
+            <th>Сума</th>
+            <th>Статус</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of orderData">
+        <tr class="border" *ngIf="item.userUID === user">
+            <td>№ {{item.orderCount}}</td>
+            <td>{{item.data | date:'dd.MM.YYYY'}}</td>
+            <td class="hide">{{item.address}}</td>
+            <td>{{item.total}} грн</td>
+
+            <td *ngIf="item.status === ' впроцесі'" class="green">
+                <p>&#x2022;{{item.status}}</p>
+            </td>
+            <td *ngIf="item.status === ' виконано'" class="blue">
+                <p>&#x2022;{{item.status}}</p>
+            </td>
+         </tr>
+
+        <tr *ngFor="let prod of item.orderProduct">
+             <td *ngIf="item.userUID === user"><img [src]="prod.imagePath"
+                    width="30px" alt=""></td>
+            <td *ngIf="item.userUID === user">{{prod.name}}</td>
+            <td *ngIf="item.userUID === user">{{prod.count}} шт</td>
+         </tr>
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+@import "../../../shared/styles/variables";
+@import "../../../shared/styles/base";
+@import "../../../shared/styles/mixins/media";
+
+.table {
+  margin-top: 50px 0;
+  width: 95%;
+  border-bottom: 2px solid $lighterBorder;
+  @include respond(tablet) {
+    font-size: 16px;
+  }
+  @include respond(mobile) {
+    width: 99%;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+}
+th,
+td {
+  border-bottom: 2px solid $lighterBorder;
+  padding: 20px 10px;
+  color: $darkText;
+  align-items: center;
+  @include respond(mobile) {
+    padding: 5px;
+  }
+}
+
+.border {
+  border-top: 3px solid $mainCol;
+  background-color: $lighterBorder;
+}
+.hide {
+  @include respond(tablet) {
+    display: none;
+  }
+}
+p{
+  width: 80px;
+  @include respond(mobile) {
+    width: 60px;
+  }
+}
+.green{
+  color:$greenText
+}
+.red{
+  color:$redCol;
+}
+.blue{
+  color:$mainCol;
+}
+.mat-button{
+  @include respond(mobile) {
+    font-size: 12px;
+    margin-top: 4px;
+    padding: 0;
+  }
+}
